@@ -1,0 +1,55 @@
+{
+  "data": [
+    {
+      "id": "0bml6qeu1m",
+      "name": {
+        "tr": "Ürünler",
+        "en": "Products",
+        "ar": "المنتجات"
+      },
+      "description": {
+        "tr": "Kadın ve erkek giyim, çanta ve aksesuar ürünleri.",
+        "en": "Women’s and men’s clothing, bags and accessories.",
+        "ar": "ملابس نسائية ورجالية وحقائب وإكسسوارات."
+      },
+      "path": "urunler",
+      "icon": "storefront",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "fw6iul"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "id": "dnasppqegp",
+      "name": {
+        "tr": "Teslimat ve iade",
+        "en": "Delivery and returns",
+        "ar": "التسليم والاسترجاع"
+      },
+      "description": {
+        "tr": "Teslimat, iade, garanti ve cayma hakkı bilgileri.",
+        "en": "Delivery, returns, warranty and withdrawal information.",
+        "ar": "معلومات التسليم والاسترجاع والضمان وحق العدول."
+      },
+      "path": "teslimat",
+      "icon": "local_shipping",
+      "category": "",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "buly7t"
+        ],
+        "footer": []
+      },
+      "index": 1
+    }
+  ],
+  "desc": []
+}

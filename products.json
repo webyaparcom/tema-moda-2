@@ -1,0 +1,267 @@
+{
+  "data": [
+    {
+      "id": "41mebpgpk2",
+      "name": {
+        "tr": "Terzi tadilat hizmeti",
+        "en": "Tailoring alteration service",
+        "ar": "خدمة تعديل الخياطة"
+      },
+      "description": {
+        "tr": "Paça, kol boyu ve bel daraltma; mağazadan alınan ürünlerde 5 iş gününde teslim.",
+        "en": "Hem, sleeve length and waist taking-in; ready in 5 business days for items bought from us.",
+        "ar": "تقصير الأطراف وطول الأكمام وتضييق الخصر؛ التسليم خلال 5 أيام عمل للمنتجات المشتراة منا."
+      },
+      "path": "terzi-tadilat-hizmeti",
+      "icon": "content_cut",
+      "category": "dis-giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "cc7s8d"
+        ],
+        "footer": []
+      },
+      "index": 0
+    },
+    {
+      "id": "jg9ee874ew",
+      "name": {
+        "tr": "Hediye seti: deri çanta + ipek şal",
+        "en": "Gift set: leather bag + silk scarf",
+        "ar": "طقم هدية: حقيبة جلدية + وشاح حرير"
+      },
+      "description": {
+        "tr": "Deri omuz çantası ve ipek şal, hediye kutusunda.",
+        "en": "A leather shoulder bag and a silk scarf in a gift box.",
+        "ar": "حقيبة كتف جلدية ووشاح حرير في علبة هدايا."
+      },
+      "path": "canta-sal-hediye-seti",
+      "icon": "redeem",
+      "category": "aksesuar",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "wqyzrw"
+        ],
+        "footer": []
+      },
+      "index": 1
+    },
+    {
+      "id": "m6wgy2ijg4",
+      "name": {
+        "tr": "Keten yaz kombini (gömlek + elbise)",
+        "en": "Linen summer set (shirt + dress)",
+        "ar": "طقم صيفي من الكتان (قميص + فستان)"
+      },
+      "description": {
+        "tr": "Keten gömlek ile akışkan elbise birlikte; ayrı alıma göre avantajlı kombin.",
+        "en": "A linen shirt and a flowing dress together, better value than buying separately.",
+        "ar": "قميص كتان وفستان منساب معًا، بسعر أفضل من الشراء المنفصل."
+      },
+      "path": "keten-yaz-kombini",
+      "icon": "checkroom",
+      "category": "giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "c88lt8"
+        ],
+        "footer": []
+      },
+      "index": 2
+    },
+    {
+      "id": "a2duwvxjp1",
+      "name": {
+        "tr": "Deri omuz çantası",
+        "en": "Leather shoulder bag",
+        "ar": "حقيبة كتف جلدية"
+      },
+      "description": {
+        "tr": "Sade çizgili, iç gözlü, ayarlanabilir askılı hakiki deri çanta.",
+        "en": "A clean-lined genuine-leather bag with an inner pocket and adjustable strap.",
+        "ar": "حقيبة جلد طبيعي بخطوط بسيطة وجيب داخلي وحزام قابل للتعديل."
+      },
+      "path": "deri-omuz-cantasi",
+      "icon": "inventory_2",
+      "category": "aksesuar",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "wqdmax"
+        ],
+        "footer": []
+      },
+      "index": 3
+    },
+    {
+      "id": "3l9oeo8nr5",
+      "name": {
+        "tr": "İpek şal",
+        "en": "Silk scarf",
+        "ar": "وشاح حرير"
+      },
+      "description": {
+        "tr": "Soyut desenli, hafif ipek şal; 90×90 cm.",
+        "en": "A light silk scarf with an abstract print; 90×90 cm.",
+        "ar": "وشاح حرير خفيف بنقش تجريدي؛ 90×90 سم."
+      },
+      "path": "ipek-sal",
+      "icon": "inventory_2",
+      "category": "aksesuar",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "ozgnrq"
+        ],
+        "footer": []
+      },
+      "index": 4
+    },
+    {
+      "id": "6w3a8lyvkj",
+      "name": {
+        "tr": "Yün palto",
+        "en": "Wool coat",
+        "ar": "معطف صوف"
+      },
+      "description": {
+        "tr": "Yün karışımlı, düz kesim, astarlı kış paltosu.",
+        "en": "A lined winter coat in a wool blend with a straight cut.",
+        "ar": "معطف شتوي مبطّن من مزيج الصوف بقصّة مستقيمة."
+      },
+      "path": "yun-palto",
+      "icon": "inventory_2",
+      "category": "dis-giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "fblshr"
+        ],
+        "footer": []
+      },
+      "index": 5
+    },
+    {
+      "id": "3ekijt1yi1",
+      "name": {
+        "tr": "Denim ceket",
+        "en": "Denim jacket",
+        "ar": "جاكيت دنيم"
+      },
+      "description": {
+        "tr": "Orta ağırlıkta pamuklu denim, klasik kesim.",
+        "en": "Mid-weight cotton denim in a classic cut.",
+        "ar": "دنيم قطني متوسط الوزن بقصّة كلاسيكية."
+      },
+      "path": "denim-ceket",
+      "icon": "inventory_2",
+      "category": "dis-giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "ebzw2l"
+        ],
+        "footer": []
+      },
+      "index": 6
+    },
+    {
+      "id": "qjwg3a8bno",
+      "name": {
+        "tr": "Midi elbise",
+        "en": "Midi dress",
+        "ar": "فستان ميدي"
+      },
+      "description": {
+        "tr": "Akışkan viskon, belden bağlamalı midi boy.",
+        "en": "Flowing viscose with a tie waist, midi length.",
+        "ar": "فيسكوز منساب بخصر مربوط وطول ميدي."
+      },
+      "path": "midi-elbise",
+      "icon": "inventory_2",
+      "category": "giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "7j250j"
+        ],
+        "footer": []
+      },
+      "index": 7
+    },
+    {
+      "id": "krdxf8smpl",
+      "name": {
+        "tr": "Keten gömlek",
+        "en": "Linen shirt",
+        "ar": "قميص كتان"
+      },
+      "description": {
+        "tr": "Yıkanmış keten, rahat kesim; her mevsim katmanlanır.",
+        "en": "Washed linen in a relaxed cut; layers well in every season.",
+        "ar": "كتان مغسول بقصّة مريحة؛ يناسب الطبقات في كل موسم."
+      },
+      "path": "keten-gomlek",
+      "icon": "inventory_2",
+      "category": "giyim",
+      "status": "play",
+      "desing": {
+        "header": [],
+        "body": [
+          "0skc7y"
+        ],
+        "footer": []
+      },
+      "index": 8
+    }
+  ],
+  "desc": [
+    {
+      "path": "kumas",
+      "name": {
+        "tr": "Kumaş",
+        "en": "Fabric",
+        "ar": "القماش"
+      }
+    },
+    {
+      "path": "beden",
+      "name": {
+        "tr": "Beden aralığı",
+        "en": "Size range",
+        "ar": "نطاق المقاسات"
+      }
+    },
+    {
+      "path": "bakim",
+      "name": {
+        "tr": "Bakım",
+        "en": "Care",
+        "ar": "العناية"
+      }
+    }
+  ],
+  "desing": {
+    "header": [],
+    "body": [
+      "g5g6a7"
+    ],
+    "footer": []
+  },
+  "modulestatus": {
+    "img": true,
+    "bgimg": true,
+    "detail": true
+  }
+}

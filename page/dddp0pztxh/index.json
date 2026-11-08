@@ -1,0 +1,39 @@
+{
+  "id": "dddp0pztxh",
+  "name": {
+    "tr": "Giyim",
+    "en": "Clothing",
+    "ar": "الملابس"
+  },
+  "description": {
+    "tr": "Giyim",
+    "en": "Clothing",
+    "ar": "الملابس"
+  },
+  "keyword": {
+    "tr": "",
+    "en": "",
+    "ar": ""
+  },
+  "path": "giyim",
+  "icon": "checkroom",
+  "category": "",
+  "status": "play",
+  "desing": {
+    "header": [],
+    "body": [
+      "fw6iul"
+    ],
+    "footer": []
+  },
+  "index": 2,
+  "url": "",
+  "text": {},
+  "title": {
+    "tr": "Giyim",
+    "en": "Clothing",
+    "ar": "الملابس"
+  },
+  "date": "2026-11-05T22:23:48.230Z",
+  "update": "2026-11-05T23:44:23.582Z"
+}
