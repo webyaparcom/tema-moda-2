@@ -1,0 +1,450 @@
+<div class="modulex">
+  <div class="modulex-title">
+    <div class="modulex-title-body">
+      <div class="modulex-title-body-title">
+        {{welcomeTitle}}
+      </div>
+      <div class="modulex-title-body-lang">
+        <ul>
+          {{langhtml}}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="modulex-body">
+    <a href="/{{lang}}/"
+      ><img
+        src="/img/{{logo}}?v={{random}}"
+        alt="{{web-name}} Logo"
+        class="modulex-body-logo"
+        loading="lazy"
+    /></a>
+    <form method="get" action="/{{lang}}/search/?search=" class="modulex-body-search">
+      <input
+        name="search"
+        placeholder="{{searchPlaceholder}}"
+        aria-label="{{searchAria}}"
+      />
+      <button class="material-symbols-outlined">Search</button>
+    </form>
+    <div class="modulex-body-menu">
+      <a href="/{{lang}}/{{urlsepet}}/" class="modulex-login">
+        <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
+        <div>{{cartText}}</div>
+        <span class="modulex-mxbadge" data-mx-sepet-sayi data-mx-bos="1" aria-label="{{sepetSayiAria}}">0</span>
+      </a>
+      <a href="/{{lang}}/{{girisUrl}}/" class="modulex-login" data-mx-uye-goster="misafir">
+        <span class="material-symbols-outlined" aria-hidden="true">account_circle</span>
+        <div>{{loginText}}</div>
+      </a>
+      <a href="/{{lang}}/{{hesabimUrl}}/" class="modulex-login" data-mx-uye-goster="giris" style="display: none">
+        <span class="material-symbols-outlined" aria-hidden="true">person</span>
+        <div>{{hesabimText}}</div>
+      </a>
+      <button type="button" class="modulex-login modulex-mxcikis" data-mx-uye-goster="giris" data-mx-cikis style="display: none" aria-label="{{cikisText}}" title="{{cikisText}}">
+        <span class="material-symbols-outlined" aria-hidden="true">logout</span>
+      </button>
+    </div>
+  </div>
+  <div class="modulex-menu-body">
+    <div class="modulex-menu">
+      <div class="modulex-menu-list-body">
+        <div class="modulex-menu-list">
+          <ul>
+            {{html}}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .modulex-body-search {
+    display: flex;
+    width: 100%;
+    padding: 10px;
+    background-color: --bgcolor--;
+    border-radius: 5px;
+    gap: 10px;
+  }
+
+  .modulex-body-search > input {
+    width: 100%;
+    background-color: transparent;
+    border-style: none;
+    outline: none !important;
+    border-width: 0;
+    color: --color-- !important;
+  }
+
+  .modulex-body-search > input::placeholder {
+    color: --color-- !important;
+  }
+
+  .modulex-body-search > button {
+    background-color: transparent;
+    border-style: none;
+    color: --color-- !important;
+    cursor: pointer;
+  }
+
+  .modulex-body-logo {
+    display: block;
+    width: auto;
+    height: --height--;
+    max-width: 100%;
+    max-height: --height--;
+    object-fit: contain;
+    object-position: left center;
+    cursor: pointer;
+  }
+
+  /* SVG logo korumasi (2026-09-13): intrinsic boyutu OLMAYAN bir SVG
+     (yalniz viewBox) `height:auto` ile flex icinde 0'a coker ve logo
+     GORUNMEZ. `max-height` yetmez -- ust sinirdir, olcu vermez. */
+  .modulex-body-logo[src*=".svg"] {
+    height: 60px;
+    width: auto;
+  }
+
+  .modulex-body > a {
+    display: inline-flex;
+    align-items: center;
+    max-width: min(35vw, 220px);
+    min-width: 0;
+    flex-shrink: 1;
+    overflow: hidden;
+  }
+
+  .modulex-body-menu {
+    display: flex;
+    gap: 10px;
+  }
+
+  .modulex-login {
+    display: flex;
+    background-color: --bgcolor--;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .modulex-login > * {
+    align-items: center;
+    text-decoration: none;
+    white-space: nowrap;
+    color: --color-- !important;
+  }
+
+  .modulex-login:hover {
+    background-color: --bgcolorhover--;
+  }
+
+  .modulex-login:hover > * {
+    color: --colorhover-- !important;
+  }
+
+  .modulex-login > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modulex {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modulex-title {
+    width: 100%;
+    background-color: var(--mxe-333, #333);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modulex-title-body {
+    color: var(--mxe-title-text, var(--mx-site-bg, #ffffff)); /* 8 Kas 2026: bant zemini --mxe-333 (temada = site yazi rengi); yazi site ZEMIN rengi (her semada zit). Eski --color-- zeminle ayni 1:1 */
+    width: var(--max);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px 10px 0px;
+  }
+
+  .modulex-title-body-title {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
+
+  .modulex-title-body-lang {
+    width: auto;
+    margin: -5px 0px -5px 0px;
+  }
+
+  .modulex-title-body-lang ul {
+    display: flex;
+    gap: 5px;
+  }
+
+  .modulex-body {
+    width: var(--max);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0px 5px 0px;
+    gap: 10px;
+  }
+
+  .modulex-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: var(--max);
+  }
+
+  .modulex-menu-list {
+    width: calc(100% - 20px);
+    background-color: --bgcolor--;
+    border-radius: 5px;
+  }
+
+  .modulex-menu-body {
+    width: 100%;
+    background-color: --bgcolor--;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .modulex-menu-list ul {
+    width: 100%;
+    list-style-type: none;
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+  }
+
+  /* li yerleşime katılmaz: bağlantılar ul'nin flex öğesi kalır (geçerli HTML, görünüm aynı) */
+  .modulex-menu-list ul li {
+    display: contents;
+  }
+
+  .modulex-menu-list ul a {
+    padding: 10px;
+    font-size: 16px;
+    color: --color--;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 5px;
+    margin: 5px;
+  }
+
+  .modulex-menu-list ul a:hover {
+    background-color: var(--mxe-228b22, #228b22);
+    color: --colorhover-- !important;
+    cursor: pointer;
+  }
+
+  .modulex-menu-list-active {
+    background-color: var(--mxe-228b22, #228b22);
+    color: --colorhover-- !important;
+    cursor: pointer;
+  }
+
+  .modulex-menu-list-body {
+    width: 100%;
+  }
+
+  @media screen and (min-width: 1024px) {
+    .modulex-body-logo {
+      max-height: --height--;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    .modulex-menu {
+      overflow-x: auto;
+    }
+
+    .modulex-menulist ul {
+      flex-direction: row;
+    }
+
+    .modulex-body > a {
+      max-width: min(40vw, 180px);
+    }
+
+    .modulex-body-logo {
+      max-width: 100%;
+      max-height: 60px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .modulex-body > a {
+      max-width: min(35vw, 150px);
+    }
+
+    .modulex-body-logo {
+      max-height: 55px;
+    }
+    .modulex-menulist ul a {
+      font-size: 14px;
+    }
+  }
+
+  /* Dar ekranda arama kendi satırına iner: logo + düğmeler arasında 82 px kalıyordu, yer tutucu kesiliyordu (390 px, 2 Kas 2026).
+     Çift sınıf: site headbottom'unun .modulex-body-search{flex:1 1 0} ve .modulex-body{flex-wrap:nowrap} kurallarını yener. */
+  @media screen and (max-width: 640px) {
+    .modulex-body.modulex-body {
+      flex-wrap: wrap;
+    }
+
+    .modulex-body .modulex-body-search {
+      order: 3;
+      flex: 1 0 100%;
+      width: 100%;
+    }
+  }
+
+  /* W2 — animasyon, mobil, erisilebilirlik */
+  @keyframes modulexW2Enter {
+    from { opacity: 0.98; }
+    to { opacity: 1; }
+  }
+
+  [class*="modulex"] {
+    box-sizing: border-box;
+    animation: modulexW2Enter 0.3s ease;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+  }
+
+  a, button, [role="button"], input[type="submit"], input[type="button"] {
+    cursor: pointer;
+  }
+
+  @media (max-width: 768px) {
+    [class*="modulex"] {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="modulex"] {
+      animation: none !important;
+      transition: none !important;
+    }
+  }
+
+
+  /* PLAN-PRO F3: MxStore uye/sepet baglantisi — sepet rozeti (data-mx-sepet-sayi; 0 iken data-mx-bos) */
+  .modulex-mxbadge,
+  .modulex-login > .modulex-mxbadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 18px;
+    height: 18px;
+    padding: 0 5px;
+    margin-left: 2px;
+    border-radius: 999px;
+    background: #e11d48;
+    color: var(--mxe-on, #ffffff) !important;
+    font-size: 11px;
+    font-weight: 700;
+    line-height: 1;
+    box-sizing: border-box;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  .modulex-mxbadge[data-mx-bos],
+  .modulex-login > .modulex-mxbadge[data-mx-bos] {
+    display: none !important;
+  }
+
+  .modulex-mxcikis {
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    min-width: 44px;
+    min-height: 44px;
+    transition: opacity 0.2s ease;
+  }
+
+  .modulex-mxcikis:hover {
+    opacity: 0.75;
+  }
+
+  @media (max-width: 768px) {
+    .modulex-mxbadge {
+      min-width: 16px;
+      height: 16px;
+      font-size: 10px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-mxbadge,
+    .modulex-mxcikis {
+      transition: none !important;
+    }
+  }
+
+  /* Erişilebilirlik: klavye odak halkası (tüm sayfa modülleri için tek nokta) */
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, [role="button"]:focus-visible, [tabindex]:focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 2px;
+  }
+
+  /* 8 Kas 2026: logo gorseli acik zemin icin cizilmis (koyu yazi, saydam); koyu modda koyu header uzerinde kayboluyordu.
+     Koyu modda acik plaka; bilerek acik logolar (logo-acik) haric. */
+  @media (prefers-color-scheme: dark) {
+    .modulex-body-logo:not([src*="acik"]) {
+      background: #ffffff;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-sizing: content-box;
+    }
+  }
+</style>
+<script>
+  /* PLAN-PRO F3: cikis dugmesi (data-mx-cikis) → MxStore.uye.cikis; rozet/gorunurluk MxStore tarafindan */
+  (window.mxStoreQ = window.mxStoreQ || []).push(function (S) {
+    var bs = document.querySelectorAll("[data-mx-cikis]");
+    for (var i = 0; i < bs.length; i++) {
+      if (bs[i].getAttribute("data-mx-cikis-bagli")) {
+        continue;
+      }
+      bs[i].setAttribute("data-mx-cikis-bagli", "1");
+      bs[i].addEventListener("click", function (ev) {
+        ev.preventDefault();
+        S.uye.cikis().then(function () {
+          window.location.href = "/{{lang}}/";
+        });
+      });
+    }
+  });
+  window.addEventListener("load", function () {
+    if (!window.MxStore) {
+      var s = document.createElement("script");
+      s.src = "/src/mx-store.js";
+      document.head.appendChild(s);
+    }
+  });
+</script>

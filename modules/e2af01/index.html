@@ -1,0 +1,71 @@
+<section class="modulex-af" id="modulex-af-{{id}}" aria-label="{{title}}">
+  <div class="modulex-af-bar">
+    <div class="modulex-af-viewport" tabindex="0" role="region" aria-label="{{title}}">
+      <ul class="modulex-af-track">{{afItems}}</ul>
+    </div>
+    <button type="button" class="modulex-af-toggle" data-af-toggle aria-pressed="false" aria-label="{{pauseLabel}}" data-af-pause="{{pauseLabel}}" data-af-play="{{playLabel}}">
+      <span class="material-symbols-outlined" aria-hidden="true" data-af-icon>pause</span>
+    </button>
+  </div>
+  <p class="modulex-af-disc"><span class="material-symbols-outlined" aria-hidden="true">info</span><span>{{disclaimer}}</span></p>
+  <p class="modulex-af-upd">{{afUpdated}}</p>
+</section>
+
+<style>
+  .modulex-af { box-sizing: border-box; width: 100%; background: --bgcolor--; color: --textcolor--; border-block: 1px solid --bordercolor--; font-size: 15px; line-height: 1.5; }
+  .modulex-af *, .modulex-af *::before, .modulex-af *::after { box-sizing: border-box; }
+  .modulex-af :where(*) { font-size: inherit; font-weight: inherit; line-height: inherit; }
+  .modulex-af .material-symbols-outlined { font-size: 20px; line-height: 1; font-weight: 400; }
+  .modulex-af-bar { display: flex; align-items: stretch; gap: 0; }
+  .modulex-af-viewport { flex: 1; min-width: 0; overflow: hidden; }
+  .modulex-af-viewport:focus-visible, .modulex-af-toggle:focus-visible { outline: 2px solid --accent--; outline-offset: -2px; }
+  /* Tek kopya kayan bant: ilk ogeden once gorunur alan kadar bosluk (padding), sonra bant kendi genisligi + bosluk kadar kayar */
+  .modulex-af-track {
+    display: inline-flex; align-items: center; gap: 36px; margin: 0; padding-block: 12px; padding-inline-start: 100%; padding-inline-end: 36px;
+    list-style: none; white-space: nowrap; animation: modulexAfSlide calc(--speed-- * 1s) linear infinite; will-change: transform;
+  }
+  [dir="rtl"] .modulex-af-track { animation-name: modulexAfSlideRtl; }
+  @keyframes modulexAfSlide { from { transform: translateX(0); } to { transform: translateX(-100%); } }
+  @keyframes modulexAfSlideRtl { from { transform: translateX(0); } to { transform: translateX(100%); } }
+  .modulex-af.is-paused .modulex-af-track, .modulex-af-viewport:hover .modulex-af-track, .modulex-af-viewport:focus-within .modulex-af-track { animation-play-state: paused; }
+  .modulex-af-item { display: inline-flex; align-items: baseline; gap: 10px; padding-inline: 4px; }
+  .modulex-af-name { font-weight: 700; }
+  .modulex-af-meta { color: --mutedcolor--; font-size: 0.9em; padding-inline: 8px; border-inline-start: 1px solid --bordercolor--; }
+  .modulex-af-price { color: --textcolor--; font-weight: 800; padding: 2px 10px; border-radius: 999px; background: --surface--; border: 1px solid --bordercolor--; }
+  .modulex-af-toggle {
+    flex: none; display: inline-flex; align-items: center; justify-content: center; min-width: 48px; min-height: 44px; border: 0; background: --surface--; color: --textcolor--;
+    border-inline-start: 1px solid --bordercolor--; cursor: pointer; transition: background-color 0.25s ease;
+  }
+  .modulex-af-toggle:hover { background: --accent--; color: --accentText--; }
+  .modulex-af-disc { display: flex; align-items: flex-start; gap: 8px; margin: 0; padding: 10px 16px 4px; color: --textcolor--; font-size: 0.9em; }
+  .modulex-af-disc .material-symbols-outlined { flex: none; color: --accent--; }
+  .modulex-af-upd { margin: 0; padding: 0 16px 10px; color: --mutedcolor--; font-size: 0.85em; }
+  .modulex-af-upd:empty { display: none; }
+  @media (max-width: 768px) {
+    .modulex-af-track { gap: 24px; }
+    .modulex-af-disc { padding-inline: 12px; }
+    .modulex-af-upd { padding-inline: 12px; }
+  }
+  /* Hareket azaltma: kayma yok; bant durağan ve elle kaydırılabilir, duraklat düğmesi anlamsız */
+  @media (prefers-reduced-motion: reduce) {
+    .modulex-af-track { animation: none !important; padding-inline-start: 16px; }
+    .modulex-af-viewport { overflow-x: auto; }
+    .modulex-af-toggle { display: none; }
+  }
+</style>
+
+<script>
+(function () {
+  var kok = document.getElementById("modulex-af-{{id}}");
+  if (!kok) { return; }
+  var dugme = kok.querySelector("[data-af-toggle]");
+  var ikon = kok.querySelector("[data-af-icon]");
+  if (!dugme) { return; }
+  dugme.addEventListener("click", function () {
+    var dur = kok.classList.toggle("is-paused");
+    dugme.setAttribute("aria-pressed", dur ? "true" : "false");
+    dugme.setAttribute("aria-label", dugme.getAttribute(dur ? "data-af-play" : "data-af-pause"));
+    if (ikon) { ikon.textContent = dur ? "play_arrow" : "pause"; }
+  });
+})();
+</script>

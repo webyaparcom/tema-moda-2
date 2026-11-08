@@ -1,0 +1,217 @@
+<section class="t3vSection">
+  <div class="t3vContainer">
+    <div class="t3vTabs" role="tablist">
+      <button type="button" class="t3vTab t3vTabActive" data-t3v-tab="0" role="tab" aria-selected="true">{{tab1Label}}</button>
+      <button type="button" class="t3vTab" data-t3v-tab="1" role="tab">{{tab2Label}}</button>
+      <button type="button" class="t3vTab" data-t3v-tab="2" role="tab">{{tab3Label}}</button>
+      <button type="button" class="t3vTab" data-t3v-tab="3" role="tab">{{tab4Label}}</button>
+    </div>
+    <div class="t3vGrid" id="t3vGrid">{{html}}</div>
+  </div>
+</section>
+
+<script>
+(function() {
+  var tabs = document.querySelectorAll(".t3vTab");
+  var cards = document.querySelectorAll(".t3vCard");
+  if (!tabs.length) return;
+  var ti;
+  for (ti = 0; ti < tabs.length; ti++) {
+    tabs[ti].addEventListener("click", function() {
+      var idx = this.getAttribute("data-t3v-tab");
+      var tj;
+      for (tj = 0; tj < tabs.length; tj++) {
+        tabs[tj].classList.remove("t3vTabActive");
+        tabs[tj].setAttribute("aria-selected", "false");
+      }
+      this.classList.add("t3vTabActive");
+      this.setAttribute("aria-selected", "true");
+      var cj;
+      for (cj = 0; cj < cards.length; cj++) {
+        if (cards[cj].getAttribute("data-tab") === idx) {
+          cards[cj].style.display = "";
+        } else {
+          cards[cj].style.display = "none";
+        }
+      }
+    });
+  }
+  var ck;
+  for (ck = 0; ck < cards.length; ck++) {
+    if (cards[ck].getAttribute("data-tab") !== "0") {
+      cards[ck].style.display = "none";
+    }
+  }
+})();
+</script>
+
+<style>
+  .t3vSection {
+    width: 100%;
+    padding: 36px 20px;
+    background: --bgcolor--;
+    box-sizing: border-box;
+  }
+
+  .t3vContainer {
+    max-width: --max--;
+    margin: 0 auto;
+  }
+
+  .t3vTabs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: 2px solid --bordercolor--;
+    margin-bottom: 24px;
+  }
+
+  .t3vTab {
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    padding: 12px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: --color--;
+    opacity: 0.65;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .t3vTab:hover { opacity: 1; color: --accent--; }
+  .t3vTabActive {
+    opacity: 1 !important;
+    color: --accent-- !important;
+    border-bottom-color: --accent-- !important;
+  }
+
+  .t3vGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .t3vCard {
+    background: --cardbg--;
+    border: 1px solid --bordercolor--;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    animation: t3vFadeIn 0.4s ease both;
+  }
+
+  @keyframes t3vFadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .t3vCard:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.1);
+  }
+
+  .t3vImgLink {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .t3vImgWrap {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: --bordercolor--;
+  }
+
+  .t3vImgWrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .t3vCard:hover .t3vImgWrap img { transform: scale(1.05); }
+
+  .t3vNoImg {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    color: --color--; opacity: 0.4;
+  }
+
+  .t3vBadges {
+    position: absolute; top: 10px; left: 10px;
+    display: flex; flex-direction: column; gap: 4px; z-index: 2;
+  }
+
+  .t3vBadge {
+    padding: 3px 8px; border-radius: 3px;
+    font-size: 10px; font-weight: 700; color: --badgecolor--;
+    text-transform: uppercase;
+  }
+  .t3vBadgeNew { background: --badgebg-new--; }
+  .t3vBadgeSale { background: --badgebg-sale--; }
+
+  .t3vSoldout {
+    position: absolute; inset: 0; z-index: 4;
+    background: rgba(0,0,0,0.55); color: --badgecolor--;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 14px;
+    pointer-events: none;
+  }
+
+  .t3vInfo { padding: 14px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+
+  .t3vStars { display: flex; gap: 1px; }
+  .t3vStar { font-size: 16px; color: --bordercolor--; }
+  .t3vStarOn { color: --accent--; font-variation-settings: "FILL" 1; }
+
+  .t3vName {
+    font-size: 14px; font-weight: 500; color: --color--;
+    text-decoration: none; cursor: pointer;
+    display: -webkit-box; -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical; overflow: hidden;
+  }
+  .t3vName:hover { text-decoration: underline; }
+
+  .t3vPriceRow { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+  .t3vOld { text-decoration: line-through; color: --oldpricecolor--; font-size: 13px; }
+  .t3vPrice { color: --pricecolor--; font-size: 17px; font-weight: 800; }
+
+  .t3vCart {
+    width: 100%; padding: 10px; margin-top: auto;
+    background: --buttonbg--; color: --buttoncolor--;
+    border: none; border-radius: 4px; cursor: pointer;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    font-size: 13px; font-weight: 600;
+    transition: opacity 0.2s ease;
+  }
+  .t3vCart:hover { opacity: 0.88; }
+  .t3vCart:disabled { opacity: 0.45; cursor: default; }
+
+  @media (max-width: 1024px) {
+    .t3vGrid { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .t3vGrid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .t3vTab { padding: 10px 12px; font-size: 11px; }
+    .t3vSection { padding: 24px 12px; }
+    [class*="t3v"] { box-sizing: border-box; max-width: 100%; }
+  }
+
+  @media (max-width: 480px) {
+    .t3vGrid { grid-template-columns: 1fr; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    [class*="t3v"], [class*="t3v"] * {
+      animation: none !important; transition: none !important;
+    }
+  }
+</style>

@@ -1,0 +1,41 @@
+{
+  "name": "E-ticaret Tab Vitrin (Tema3)",
+  "desing": {
+    "max": "1200px",
+    "bgcolor": "--bgAlt--",
+    "cardbg": "--bgcolor--",
+    "bordercolor": "--bordercolor--",
+    "color": "--color--",
+    "pricecolor": "--pricecolor--",
+    "oldpricecolor": "--oldpricecolor--",
+    "badgecolor": "#ffffff",
+    "badgebg-new": "--accent--",
+    "badgebg-sale": "--accent--",
+    "buttonbg": "#111111",
+    "buttoncolor": "#ffffff",
+    "accent": "--accent--",
+    "showCount": 8,
+    "columns": 4,
+    "tab1Label": { "tr": "YENİ GELENLER", "en": "NEW ARRIVALS" },
+    "tab2Label": { "tr": "SEÇTİKLERİMİZ", "en": "OUR PICKS" },
+    "tab3Label": { "tr": "ÇOK SATANLAR", "en": "BEST SELLERS" },
+    "tab4Label": { "tr": "ÇOK SEVİLENLER", "en": "MOST LOVED" },
+    "addToCart": { "tr": "Sepete Ekle", "en": "Add to Cart" },
+    "soldOutText": { "tr": "Tükendi", "en": "Sold Out" },
+    "newText": { "tr": "YENİ", "en": "NEW" },
+    "saleText": { "tr": "İNDİRİM", "en": "SALE" },
+    "quickViewText": { "tr": "Hızlı Görünüm", "en": "Quick View" },
+    "compareText": { "tr": "Karşılaştır", "en": "Compare" },
+    "favText": { "tr": "Favori", "en": "Favorite" }
+  },
+  "data": { "products": [] },
+  "category": "e-commerce",
+  "description": "Journal 3 tarzı tab vitrin: 4 sekme (Yeni Gelenler / Seçtiklerimiz / Çok Satanlar / Çok Sevilenler), 4 kolon ürün grid, rozet, yıldız, hover aksiyonları (favori/karşılaştır/hızlı görünüm placeholder). Canlı products.json okur.",
+  "version": "1.0.0",
+  "icon": "view_module",
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}

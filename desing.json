@@ -1,0 +1,84 @@
+{
+  "header": [
+    "e2db01",
+    "e2mn01"
+  ],
+  "body": [
+    "e2hr01",
+    "e2tv01",
+    "e2ca01"
+  ],
+  "footer": [
+    "e2ft01",
+    "e2sw01",
+    "e2hz01",
+    "4xfgfo"
+  ],
+  "headerdefault": [
+    "e2db01",
+    "e2mn01"
+  ],
+  "bodydefault": [],
+  "footerdefault": [
+    "e2ft01",
+    "e2sw01",
+    "e2hz01",
+    "4xfgfo"
+  ],
+  "headtop": "",
+  "headbottom": "<style id=\"mx-tema-menu\">:root{--mxe-cd9624:var(--mx-site-primary);--mxe-238b23:var(--mx-site-primary);--mxe-228b22:var(--mx-site-primary);--mxe-fef7e7:var(--mx-site-surface-2);--mxe-e0dccb:color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);--mxe-eee:var(--mx-site-surface-2);--mxe-f7f7f7:var(--mx-site-surface);--mxe-ccc:color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);--mxe-333:var(--mx-site-text);--mxe-on:var(--mx-site-primary-contrast)}</style>",
+  "colors": {
+    "lite": [
+      {
+        "name": "--color1--",
+        "value": "#FFFFFF"
+      },
+      {
+        "name": "--color2--",
+        "value": "#F0EADB"
+      },
+      {
+        "name": "--bg--",
+        "value": "#FBF8F1"
+      },
+      {
+        "name": "--text--",
+        "value": "#1B1A17"
+      },
+      {
+        "name": "--button--",
+        "value": "#1B1A17"
+      },
+      {
+        "name": "--buttonText--",
+        "value": "#FBF8F1"
+      }
+    ],
+    "dark": [
+      {
+        "name": "--color1--",
+        "value": "#1B1A17"
+      },
+      {
+        "name": "--color2--",
+        "value": "#24221E"
+      },
+      {
+        "name": "--bg--",
+        "value": "#121110"
+      },
+      {
+        "name": "--text--",
+        "value": "#F3EDE0"
+      },
+      {
+        "name": "--button--",
+        "value": "#D8B86A"
+      },
+      {
+        "name": "--buttonText--",
+        "value": "#14110A"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "name": "Menü E-Ticaret",
+  "desing": {
+    "logo": "logo.png",
+    "color": "#ffffff",
+    "colorhover": "#123763",
+    "height": "50px",
+    "urlsepet": "sepet",
+    "bgcolor": "#1e3046",
+    "bgcolorhover": "#123763",
+    "searchPlaceholder": {
+      "tr": "Aradığınız ürün, kategori veya markalar burada...",
+      "en": "Search products, categories or brands..."
+    },
+    "searchAria": {
+      "tr": "Ürün, kategori veya marka ara",
+      "en": "Search product, category or brand"
+    },
+    "cartText": {
+      "tr": "Sepetim",
+      "en": "My Cart"
+    },
+    "loginText": {
+      "tr": "Üye Girişi",
+      "en": "Member Login"
+    },
+    "welcomeTitle": {
+      "tr": "Hoş geldiniz!",
+      "en": "Welcome!"
+    },
+    "girisUrl": "login",
+    "hesabimUrl": "hesabim",
+    "hesabimText": {
+      "tr": "Hesabım",
+      "en": "My Account"
+    },
+    "cikisText": {
+      "tr": "Çıkış yap",
+      "en": "Log out"
+    },
+    "sepetSayiAria": {
+      "tr": "Sepetteki ürün adedi",
+      "en": "Items in cart"
+    }
+  },
+  "category": "menu",
+  "description": "E-ticaret özel header navigasyon menüsü. Logo, kategori linkleri ve sepet ikonu ile alışveriş odaklı menü sunar. 2 farklı e-ticaret projesinde kullanılır. Sepet sayacı göstergesi, hover efektli renkler, koyu tema tasarımı ve sepet sayfasına yönlendirme URL entegrasyonu içerir. PLAN-PRO F3: giriş linki data-mx-uye-goster=\"misafir\", Hesabım + Çıkış data-mx-uye-goster=\"giris\" (MxStore.uye), sepet ikonunda data-mx-sepet-sayi rozeti (MxStore.sepet; 0 iken gizli).",
+  "version": "1.1.0",
+  "icon": "shopping_cart",
+  "veri": {
+    "statik": true,
+    "dinamik": true,
+    "kaynak": "desing/data | MxStore (/api/*)"
+  }
+}

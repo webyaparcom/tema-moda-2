@@ -1,0 +1,44 @@
+{
+  "name": "Altın Fiyat Bandı (Bilgilendirme)",
+  "description": "Statik, bilgilendirme amaçlı gram altın / ayar fiyat bandı. Değerler elle girilir (canlı veri yoktur); güncelleme tarihi-saati Intl ile biçimlenir ve «bilgilendirme amaçlıdır, bağlayıcı değildir» uyarısı her zaman görünür. Yatay kayan bant tek kopyadır (içerik çoğaltılmaz); duraklat düğmesi vardır, prefers-reduced-motion'da durağan ve kaydırılabilir; RTL'de kayma yönü ters döner.",
+  "version": "1.0.0",
+  "icon": "payments",
+  "category": "page-list",
+  "desing": {
+    "bgcolor": "var(--mx-site-surface, #f6f6f4)",
+    "textcolor": "var(--mx-site-text, #1b1b1b)",
+    "mutedcolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 72%, var(--mx-site-bg, #fff))",
+    "surface": "var(--mx-site-bg, #ffffff)",
+    "accent": "var(--mx-site-primary, #2563eb)",
+    "accentText": "var(--mx-site-primary-contrast, #ffffff)",
+    "bordercolor": "color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent)",
+    "speed": 40,
+    "title": { "tr": "Bilgilendirme amaçlı altın fiyatları", "en": "Gold prices — for information only", "ar": "أسعار الذهب — للاطلاع فقط" },
+    "karatFmt": { "tr": "{n} ayar", "en": "{n}K", "ar": "عيار {n}" },
+    "gramFmt": { "tr": "{n} gr", "en": "{n} g", "ar": "{n} غ" },
+    "updatedLabel": { "tr": "Son güncelleme", "en": "Last updated", "ar": "آخر تحديث" },
+    "disclaimer": {
+      "tr": "Bu fiyatlar bilgilendirme amaçlıdır, bağlayıcı değildir ve canlı veri değildir; elle girilmiş örnek değerlerdir. Güncel fiyat için mağazamıza danışınız.",
+      "en": "These prices are for information only, are not binding and are not live data; they are manually entered sample values. Please contact our store for the current price.",
+      "ar": "هذه الأسعار للاطلاع فقط وغير ملزمة وليست بيانات مباشرة؛ إنما هي قيم تجريبية أُدخلت يدويًا. يُرجى مراجعة متجرنا لمعرفة السعر الحالي."
+    },
+    "pauseLabel": { "tr": "Bandı durdur", "en": "Pause ticker", "ar": "إيقاف الشريط مؤقتًا" },
+    "playLabel": { "tr": "Bandı başlat", "en": "Resume ticker", "ar": "تشغيل الشريط" }
+  },
+  "data": {
+    "updatedAt": "2026-10-30T10:30:00+03:00",
+    "rows": [
+      { "name": { "tr": "Gram altın", "en": "Gold gram", "ar": "غرام الذهب" }, "gram": 1, "ayar": 24, "price": 3125.5 },
+      { "name": { "tr": "22 ayar bilezik", "en": "22K bracelet gold", "ar": "ذهب الأساور" }, "gram": 1, "ayar": 22, "price": 2870.25 },
+      { "name": { "tr": "18 ayar altın", "en": "18K gold", "ar": "ذهب عيار 18" }, "gram": 1, "ayar": 18, "price": 2345.75 },
+      { "name": { "tr": "14 ayar altın", "en": "14K gold", "ar": "ذهب عيار 14" }, "gram": 1, "ayar": 14, "price": 1830 },
+      { "name": { "tr": "Çeyrek (ziynet)", "en": "Quarter coin", "ar": "ربع ليرة" }, "gram": 1.75, "ayar": 22, "price": 5120 }
+    ]
+  },
+  "tags": ["kuyumcu", "altın", "fiyat", "gold", "ticker", "rtl"],
+  "veri": {
+    "statik": true,
+    "dinamik": false,
+    "kaynak": "desing/data"
+  }
+}
