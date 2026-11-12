@@ -38,21 +38,21 @@
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-500-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/fonts/nunito-sans.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/fonts/dm-serif-display.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/fonts/noto-naskh-arabic.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/rubik.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/css.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/mx-ds.css?v=t8voh" />
+  <link rel="stylesheet" href="/src/fonts/nunito-sans.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/fonts/dm-serif-display.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/fonts/noto-naskh-arabic.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/rubik.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/css.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/mx-ds.css?v=r6mmi" />
   
-  <link rel="stylesheet" href="/src/mx-ui.css?v=t8voh" />
+  <link rel="stylesheet" href="/src/mx-ui.css?v=r6mmi" />
   <link rel="preload" href="/src/material-symbols-outlined.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=t8voh" />
+  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=r6mmi" />
   
-  <link rel="stylesheet" href="/src/cookie.css?v=t8voh" />
-  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=t8voh" />
-  <link rel="shortcut icon" href="/img/icon.png?v=t8voh" type="image/png" />
+  <link rel="stylesheet" href="/src/cookie.css?v=r6mmi" />
+  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=r6mmi" />
+  <link rel="shortcut icon" href="/img/icon.png?v=r6mmi" type="image/png" />
   <link rel="apple-touch-icon" href="/img/icon.png" />
   <script type="application/ld+json">
 {
@@ -98,7 +98,7 @@
         "@type": "ImageObject",
         "url": "https://moda-2.webyapar.com/img/logo.png"
       },
-      "dateModified": "2026-11-05T23:44:23.715Z",
+      "dateModified": "2026-11-12T07:36:33.712Z",
       "breadcrumb": {
         "@id": "https://moda-2.webyapar.com/ar/gizlilik-politikasi/#breadcrumb"
       }
@@ -125,7 +125,7 @@
 }
 </script>
   
-<link rel="stylesheet" href="style.css?v=t8voh">
+<link rel="stylesheet" href="style.css?v=r6mmi">
 </head>
 
 <body>
@@ -239,9 +239,12 @@
     </div>
   </div>
   <div class="h0001-body">
+    <button type="button" class="h0001-mobile-toggle" aria-label="تبديل القائمة" aria-expanded="false" aria-controls="menu-eticaret-1-drawer" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
     <a href="/ar/"
       ><img
-        src="/img/logo.png?v=x1f8i"
+        src="/img/logo.png?v=tslpx"
         alt="Lale Atelier Logo"
         class="h0001-body-logo"
         loading="lazy"
@@ -265,7 +268,12 @@
       
     </div>
   </div>
-  <div class="h0001-menu-body">
+  
+  <div class="h0001-menu-backdrop" aria-hidden="true" onclick="menuEticaret1Toggle()"></div>
+  <div class="h0001-menu-body" id="menu-eticaret-1-drawer">
+    <button type="button" class="h0001-menu-drawer-close" aria-label="إغلاق القائمة" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
     <div class="h0001-menu">
       <div class="h0001-menu-list-body">
         <div class="h0001-menu-list">
@@ -302,6 +310,32 @@
       document.head.appendChild(s);
     }
   });
+</script>
+<script>
+  if (typeof menuEticaret1Toggle === "undefined") {
+    function menuEticaret1Toggle() {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var b = document.querySelector(".h0001-menu-backdrop");
+      var t = document.querySelector(".h0001-mobile-toggle");
+      if (!d) { return; }
+      var ac = !d.classList.contains("h0001-menu-open");
+      d.classList[ac ? "add" : "remove"]("h0001-menu-open");
+      if (b) { b.classList[ac ? "add" : "remove"]("h0001-menu-open"); }
+      if (t) { t.setAttribute("aria-expanded", ac ? "true" : "false"); }
+      document.body.style.overflow = ac ? "hidden" : "";
+      if (ac) { document.addEventListener("keydown", menuEticaret1Esc); }
+      else { document.removeEventListener("keydown", menuEticaret1Esc); if (t) { t.focus(); } }
+    }
+    function menuEticaret1Esc(e) {
+      if (e.key === "Escape") { menuEticaret1Toggle(); }
+    }
+    
+    document.addEventListener("click", function (e) {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (d && a && d.contains(a) && d.classList.contains("h0001-menu-open")) { menuEticaret1Toggle(); }
+    });
+  }
 </script>
 </div>
   <div id="content"><h1 style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0">سياسة الخصوصية</h1></div>
@@ -345,7 +379,7 @@
 
 
 
-<div class="f0001-cartw">
+<nav class="f0000-efoot__bar" aria-label="وصول سريع"><button type="button" class="f0000-efoot__bar-dil" aria-haspopup="dialog" aria-expanded="false"><span class="material-symbols-outlined" aria-hidden="true">language</span>اللغة · AR</button></nav><div class="f0000-efoot__sheet" hidden><div class="f0000-efoot__sheet-ic" role="dialog" aria-modal="true" aria-label="اللغة"><div class="f0000-efoot__sheet-ust"><strong>اللغة</strong><button type="button" class="f0000-efoot__sheet-kapat" aria-label="إغلاق"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></div><div class="f0000-efoot__sheet-liste"><ul><li class="wm-lang-item"><a href="/tr/gizlilik-politikasi/" hreflang="tr" lang="tr">TR</a></li><li class="wm-lang-item"><a href="/en/gizlilik-politikasi/" hreflang="en" lang="en">EN</a></li><li class="wm-lang-item wm-lang-active"><a href="/ar/gizlilik-politikasi/" hreflang="ar" lang="ar" aria-current="true">AR</a></li></ul></div></div></div><script>(function(){var b=document.querySelector(".f0000-efoot__bar-dil"),sh=document.querySelector(".f0000-efoot__sheet");if(!b||!sh){return;}function kapa(){sh.hidden=true;b.setAttribute("aria-expanded","false");b.focus();}b.addEventListener("click",function(){var ic=sh.querySelector(".f0000-efoot__sheet-liste");if(ic&&!ic.firstChild){var kaynak=document.querySelector(".wm-langbar ul")||document.querySelector("[class*=langs]");if(kaynak){var kopya=kaynak.cloneNode(true);ic.appendChild(kopya);}else{var linkler=document.querySelectorAll("a[hreflang]");var ul=document.createElement("ul");for(var i=0;i<linkler.length;i++){if(sh.contains(linkler[i])){continue;}var li=document.createElement("li");li.appendChild(linkler[i].cloneNode(true));ul.appendChild(li);}if(ul.firstChild){ic.appendChild(ul);}else{b.hidden=true;return;}}}var ac=sh.hidden;sh.hidden=!ac;b.setAttribute("aria-expanded",ac?"true":"false");if(ac){var k=sh.querySelector(".f0000-efoot__sheet-kapat");if(k){k.focus();}}});sh.addEventListener("click",function(e){if(e.target===sh||(e.target.closest&&e.target.closest(".f0000-efoot__sheet-kapat"))){kapa();}});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sh.hidden){kapa();}});})();</script><div class="f0001-cartw">
   <button type="button" class="f0001-cartw-fab" onclick="mxCartDrawerToggle()" aria-label="سلتي">
     <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
     <span class="f0001-cartw-badge" data-mx-cart-badge>0</span>
@@ -947,10 +981,10 @@
   
 
   <script defer src="/src/swiper-bundle.min.js"></script>
-  <script defer src="/src/mx-ui.js?v=t8voh"></script>
-  <script defer src="/src/mx-store.js?v=t8voh"></script>
-  <script defer type="text/javascript" src="/src/js.js?v=t8voh"></script>
-  <script defer src="/src/cookie.js?v=t8voh"></script>
+  <script defer src="/src/mx-ui.js?v=r6mmi"></script>
+  <script defer src="/src/mx-store.js?v=r6mmi"></script>
+  <script defer type="text/javascript" src="/src/js.js?v=r6mmi"></script>
+  <script defer src="/src/cookie.js?v=r6mmi"></script>
 
 </body>
 

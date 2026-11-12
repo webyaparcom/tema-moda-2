@@ -38,21 +38,21 @@
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-400-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-500-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="/src/fonts/nunito-sans/nunito-sans-latin-ext-700-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/fonts/nunito-sans.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/fonts/dm-serif-display.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/fonts/noto-naskh-arabic.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/rubik.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/css.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/mx-ds.css?v=xq3m6" />
+  <link rel="stylesheet" href="/src/fonts/nunito-sans.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/fonts/dm-serif-display.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/fonts/ibm-plex-sans-arabic.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/fonts/noto-naskh-arabic.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/rubik.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/css.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/mx-ds.css?v=ridd7" />
   
-  <link rel="stylesheet" href="/src/mx-ui.css?v=xq3m6" />
+  <link rel="stylesheet" href="/src/mx-ui.css?v=ridd7" />
   <link rel="preload" href="/src/material-symbols-outlined.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=xq3m6" />
+  <link rel="stylesheet" href="/src/material-symbols-outlined.css?v=ridd7" />
   
-  <link rel="stylesheet" href="/src/cookie.css?v=xq3m6" />
-  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=xq3m6" />
-  <link rel="shortcut icon" href="/img/icon.png?v=xq3m6" type="image/png" />
+  <link rel="stylesheet" href="/src/cookie.css?v=ridd7" />
+  <link rel="stylesheet" href="/src/swiper-bundle.min.css?v=ridd7" />
+  <link rel="shortcut icon" href="/img/icon.png?v=ridd7" type="image/png" />
   <link rel="apple-touch-icon" href="/img/icon.png" />
   <script type="application/ld+json">
 {
@@ -103,7 +103,7 @@
 }
 </script>
   
-<link rel="stylesheet" href="style.css?v=xq3m6">
+<link rel="stylesheet" href="style.css?v=ridd7">
 </head>
 
 <body>
@@ -217,9 +217,12 @@
     </div>
   </div>
   <div class="h0001-body">
+    <button type="button" class="h0001-mobile-toggle" aria-label="Toggle Menu" aria-expanded="false" aria-controls="menu-eticaret-1-drawer" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
     <a href="/en/"
       ><img
-        src="/img/logo.png?v=q1czo"
+        src="/img/logo.png?v=d6rys"
         alt="Lale Atelier Logo"
         class="h0001-body-logo"
         loading="lazy"
@@ -243,7 +246,12 @@
       
     </div>
   </div>
-  <div class="h0001-menu-body">
+  
+  <div class="h0001-menu-backdrop" aria-hidden="true" onclick="menuEticaret1Toggle()"></div>
+  <div class="h0001-menu-body" id="menu-eticaret-1-drawer">
+    <button type="button" class="h0001-menu-drawer-close" aria-label="Close Menu" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
     <div class="h0001-menu">
       <div class="h0001-menu-list-body">
         <div class="h0001-menu-list">
@@ -280,6 +288,32 @@
       document.head.appendChild(s);
     }
   });
+</script>
+<script>
+  if (typeof menuEticaret1Toggle === "undefined") {
+    function menuEticaret1Toggle() {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var b = document.querySelector(".h0001-menu-backdrop");
+      var t = document.querySelector(".h0001-mobile-toggle");
+      if (!d) { return; }
+      var ac = !d.classList.contains("h0001-menu-open");
+      d.classList[ac ? "add" : "remove"]("h0001-menu-open");
+      if (b) { b.classList[ac ? "add" : "remove"]("h0001-menu-open"); }
+      if (t) { t.setAttribute("aria-expanded", ac ? "true" : "false"); }
+      document.body.style.overflow = ac ? "hidden" : "";
+      if (ac) { document.addEventListener("keydown", menuEticaret1Esc); }
+      else { document.removeEventListener("keydown", menuEticaret1Esc); if (t) { t.focus(); } }
+    }
+    function menuEticaret1Esc(e) {
+      if (e.key === "Escape") { menuEticaret1Toggle(); }
+    }
+    
+    document.addEventListener("click", function (e) {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (d && a && d.contains(a) && d.classList.contains("h0001-menu-open")) { menuEticaret1Toggle(); }
+    });
+  }
 </script>
 </div>
   <div id="content"><section class="b0000-hero2">
@@ -410,7 +444,7 @@
 
 
 
-<div class="f0001-cartw">
+<nav class="f0000-efoot__bar" aria-label="Quick access"><button type="button" class="f0000-efoot__bar-dil" aria-haspopup="dialog" aria-expanded="false"><span class="material-symbols-outlined" aria-hidden="true">language</span>Language · EN</button></nav><div class="f0000-efoot__sheet" hidden><div class="f0000-efoot__sheet-ic" role="dialog" aria-modal="true" aria-label="Language"><div class="f0000-efoot__sheet-ust"><strong>Language</strong><button type="button" class="f0000-efoot__sheet-kapat" aria-label="Close"><span class="material-symbols-outlined" aria-hidden="true">close</span></button></div><div class="f0000-efoot__sheet-liste"><ul><li class="wm-lang-item"><a href="/tr/" hreflang="tr" lang="tr">TR</a></li><li class="wm-lang-item wm-lang-active"><a href="/en/" hreflang="en" lang="en" aria-current="true">EN</a></li><li class="wm-lang-item"><a href="/ar/" hreflang="ar" lang="ar">AR</a></li></ul></div></div></div><script>(function(){var b=document.querySelector(".f0000-efoot__bar-dil"),sh=document.querySelector(".f0000-efoot__sheet");if(!b||!sh){return;}function kapa(){sh.hidden=true;b.setAttribute("aria-expanded","false");b.focus();}b.addEventListener("click",function(){var ic=sh.querySelector(".f0000-efoot__sheet-liste");if(ic&&!ic.firstChild){var kaynak=document.querySelector(".wm-langbar ul")||document.querySelector("[class*=langs]");if(kaynak){var kopya=kaynak.cloneNode(true);ic.appendChild(kopya);}else{var linkler=document.querySelectorAll("a[hreflang]");var ul=document.createElement("ul");for(var i=0;i<linkler.length;i++){if(sh.contains(linkler[i])){continue;}var li=document.createElement("li");li.appendChild(linkler[i].cloneNode(true));ul.appendChild(li);}if(ul.firstChild){ic.appendChild(ul);}else{b.hidden=true;return;}}}var ac=sh.hidden;sh.hidden=!ac;b.setAttribute("aria-expanded",ac?"true":"false");if(ac){var k=sh.querySelector(".f0000-efoot__sheet-kapat");if(k){k.focus();}}});sh.addEventListener("click",function(e){if(e.target===sh||(e.target.closest&&e.target.closest(".f0000-efoot__sheet-kapat"))){kapa();}});document.addEventListener("keydown",function(e){if(e.key==="Escape"&&!sh.hidden){kapa();}});})();</script><div class="f0001-cartw">
   <button type="button" class="f0001-cartw-fab" onclick="mxCartDrawerToggle()" aria-label="My Cart">
     <span class="material-symbols-outlined" aria-hidden="true">shopping_cart</span>
     <span class="f0001-cartw-badge" data-mx-cart-badge>0</span>
@@ -1012,10 +1046,10 @@
   
 
   <script defer src="/src/swiper-bundle.min.js"></script>
-  <script defer src="/src/mx-ui.js?v=xq3m6"></script>
-  <script defer src="/src/mx-store.js?v=xq3m6"></script>
-  <script defer type="text/javascript" src="/src/js.js?v=xq3m6"></script>
-  <script defer src="/src/cookie.js?v=xq3m6"></script>
+  <script defer src="/src/mx-ui.js?v=ridd7"></script>
+  <script defer src="/src/mx-store.js?v=ridd7"></script>
+  <script defer type="text/javascript" src="/src/js.js?v=ridd7"></script>
+  <script defer src="/src/cookie.js?v=ridd7"></script>
 
 </body>
 

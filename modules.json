@@ -30,6 +30,12 @@
           "tr": "(yeni sekmede açılır)",
           "en": "(opens in a new tab)",
           "ar": "(يفتح في علامة تبويب جديدة)"
+        },
+        "girisHref": "",
+        "girisText": {
+          "tr": "Üye Girişi",
+          "en": "Login",
+          "ar": "تسجيل الدخول"
         }
       },
       "version": "1.0.0",
@@ -132,9 +138,9 @@
       "id": "e2hr01",
       "desing": {
         "max": "1200px",
-        "gradient": "linear-gradient(135deg, #1B1A17 0%, #F0EADB 55%, #FBF8F1 130%)",
-        "glow1": "#1B1A17",
-        "glow2": "#F0EADB",
+        "gradient": "linear-gradient(150deg, #1B1A17 0%, #1B1A17 45%, #1B1A17 190%)",
+        "glow1": "#7A6130",
+        "glow2": "#3A311C",
         "btnbg": "#1B1A17",
         "btncolor": "#FBF8F1",
         "badge": {
