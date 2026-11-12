@@ -12,6 +12,9 @@
     </div>
   </div>
   <div class="modulex-body">
+    <button type="button" class="modulex-mobile-toggle" aria-label="@menu-toggle@" aria-expanded="false" aria-controls="menu-eticaret-1-drawer" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
+    </button>
     <a href="/{{lang}}/"
       ><img
         src="/img/{{logo}}?v={{random}}"
@@ -46,7 +49,12 @@
       </button>
     </div>
   </div>
-  <div class="modulex-menu-body">
+  <!-- Mobil uygulama kuralı (12 Kas 2026): kategori menüsü ≤768px'te SOLDAN açılan çekmece (masaüstünde yatay şerit aynen) -->
+  <div class="modulex-menu-backdrop" aria-hidden="true" onclick="menuEticaret1Toggle()"></div>
+  <div class="modulex-menu-body" id="menu-eticaret-1-drawer">
+    <button type="button" class="modulex-menu-drawer-close" aria-label="@menu-close@" onclick="menuEticaret1Toggle()">
+      <span class="material-symbols-outlined" aria-hidden="true">close</span>
+    </button>
     <div class="modulex-menu">
       <div class="modulex-menu-list-body">
         <div class="modulex-menu-list">
@@ -353,6 +361,171 @@
   }
 
 
+  .modulex-mobile-toggle,
+  .modulex-menu-drawer-close,
+  .modulex-menu-backdrop {
+    display: none;
+  }
+
+  /* Mobil uygulama kuralı (12 Kas 2026): kategori menüsü SOL çekmece (RTL'de aynası) + dokunma hedefleri >= 48px (yalnız <=768px) */
+  @media (max-width: 768px) {
+    .modulex-mobile-toggle {
+      display: inline-flex;
+      order: -1;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-width: 48px;
+      min-height: 48px;
+      padding: 0;
+      border: 0;
+      border-radius: 5px;
+      background-color: --bgcolor--;
+      color: --color--;
+      cursor: pointer;
+    }
+
+    /* üst satır: hamburger | logo | sepet | giriş (etiketler ekran okuyucuya açık, görsel olarak simge) */
+    .modulex-body > a {
+      flex: 1 1 0;
+      min-width: 0;
+      max-width: none;
+    }
+
+    .modulex-body-menu {
+      gap: 6px;
+      flex: 0 0 auto;
+    }
+
+    .modulex-login {
+      padding: 0 12px;
+      min-width: 48px;
+      position: relative;
+    }
+
+    .modulex-login > div {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      white-space: nowrap;
+    }
+
+    .modulex-menu-body {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      inset-inline-start: 0;
+      width: min(86vw, 320px);
+      z-index: 10000;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      transform: translateX(-100%);
+      visibility: hidden;
+      transition: transform 0.28s ease, visibility 0s linear 0.28s;
+      box-shadow: 4px 0 24px rgba(0, 0, 0, 0.25);
+      padding-top: env(safe-area-inset-top, 0);
+      padding-bottom: env(safe-area-inset-bottom, 0);
+    }
+
+    [dir="rtl"] .modulex-menu-body {
+      transform: translateX(100%);
+    }
+
+    .modulex-menu-body.modulex-menu-open,
+    [dir="rtl"] .modulex-menu-body.modulex-menu-open {
+      transform: none;
+      visibility: visible;
+      transition: transform 0.28s ease, visibility 0s;
+    }
+
+    .modulex-menu-drawer-close {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+      flex: 0 0 auto;
+      width: 48px;
+      height: 48px;
+      margin: 4px 4px 0 4px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: transparent;
+      color: --color--;
+      cursor: pointer;
+    }
+
+    .modulex-menu-backdrop.modulex-menu-open {
+      display: block;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.55);
+    }
+
+    .modulex-menu {
+      flex-direction: column;
+      width: 100%;
+      overflow: visible;
+    }
+
+    .modulex-menu-list {
+      width: 100%;
+      border-radius: 0;
+    }
+
+    .modulex-menu-list ul {
+      flex-direction: column;
+      gap: 0;
+      overflow: visible;
+    }
+
+    .modulex-menu-list ul a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 48px;
+      margin: 0;
+      border-radius: 0;
+      text-align: start;
+      white-space: normal;
+      border-bottom: 1px solid color-mix(in srgb, --color-- 18%, transparent);
+    }
+
+    .modulex-body-search input {
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+
+    .modulex-body-search button {
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .modulex-login {
+      min-height: 48px;
+      box-sizing: border-box;
+    }
+
+    .modulex-mxcikis {
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .modulex-title-body-lang li a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 48px;
+      min-height: 48px;
+    }
+  }
+
   /* PLAN-PRO F3: MxStore uye/sepet baglantisi — sepet rozeti (data-mx-sepet-sayi; 0 iken data-mx-bos) */
   .modulex-mxbadge,
   .modulex-login > .modulex-mxbadge {
@@ -447,4 +620,30 @@
       document.head.appendChild(s);
     }
   });
+</script>
+<script>
+  if (typeof menuEticaret1Toggle === "undefined") {
+    function menuEticaret1Toggle() {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var b = document.querySelector(".modulex-menu-backdrop");
+      var t = document.querySelector(".modulex-mobile-toggle");
+      if (!d) { return; }
+      var ac = !d.classList.contains("modulex-menu-open");
+      d.classList[ac ? "add" : "remove"]("modulex-menu-open");
+      if (b) { b.classList[ac ? "add" : "remove"]("modulex-menu-open"); }
+      if (t) { t.setAttribute("aria-expanded", ac ? "true" : "false"); }
+      document.body.style.overflow = ac ? "hidden" : "";
+      if (ac) { document.addEventListener("keydown", menuEticaret1Esc); }
+      else { document.removeEventListener("keydown", menuEticaret1Esc); if (t) { t.focus(); } }
+    }
+    function menuEticaret1Esc(e) {
+      if (e.key === "Escape") { menuEticaret1Toggle(); }
+    }
+    /* çekmece içindeki bağlantıya dokununca kapan (sayfa içi # bağlantılar için) */
+    document.addEventListener("click", function (e) {
+      var d = document.getElementById("menu-eticaret-1-drawer");
+      var a = e.target && e.target.closest ? e.target.closest("a[href]") : null;
+      if (d && a && d.contains(a) && d.classList.contains("modulex-menu-open")) { menuEticaret1Toggle(); }
+    });
+  }
 </script>
