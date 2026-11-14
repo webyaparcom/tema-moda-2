@@ -67,13 +67,23 @@
   </div>
 </div>
 <style>
+  /* 14 Kas 2026 (hata #b8fd540a): arama kutusu zemini sayfa zeminiyle aynı + kenarlıksızdı → «zeminle bir bütün» (WCAG 1.4.11).
+     Varsayılan: yüzey zemini (MXE eşlemeli temada --mxe-f7f7f7 = site yüzeyi; eşlemesiz sitede eski --bgcolor--), modülün kendi
+     yazı/zemin çiftinden ≥ 3:1 kenarlık (yazı %55) ve görünür odak halkası. Ayar: --mxe-arama-bg / --mxe-arama-border / --mxe-arama-odak. */
   .modulex-body-search {
     display: flex;
     width: 100%;
     padding: 10px;
-    background-color: --bgcolor--;
+    background-color: var(--mxe-arama-bg, var(--mxe-f7f7f7, --bgcolor--));
+    border: 1px solid var(--mxe-arama-border, color-mix(in srgb, --color-- 55%, --bgcolor--));
+    box-sizing: border-box;
     border-radius: 5px;
     gap: 10px;
+  }
+
+  .modulex-body-search:focus-within {
+    border-color: var(--mxe-arama-odak, var(--mxe-228b22, --color--));
+    box-shadow: 0 0 0 2px color-mix(in srgb, var(--mxe-arama-odak, var(--mxe-228b22, --color--)) 35%, transparent);
   }
 
   .modulex-body-search > input {
@@ -149,11 +159,14 @@
     color: --color-- !important;
   }
 
-  .modulex-login:hover {
+  .modulex-login:hover,
+  .modulex-login:focus-visible {
     background-color: --bgcolorhover--;
+    color: --colorhover--; /* odak halkası currentColor: çocuklarla aynı renk (14 Kas 2026) */
   }
 
-  .modulex-login:hover > * {
+  .modulex-login:hover > *,
+  .modulex-login:focus-visible > * {
     color: --colorhover-- !important;
   }
 
@@ -262,15 +275,19 @@
     margin: 5px;
   }
 
-  .modulex-menu-list ul a:hover {
-    background-color: var(--mxe-228b22, #228b22);
-    color: --colorhover-- !important;
+  /* 14 Kas 2026 (hata #b8fd540a): hover/aktif ZEMİN --mxe-228b22 (temada primary), YAZI --colorhover-- (temada da primary) → 1:1.
+     Yazı jetonu artık zeminden ayrı: --mxe-menu-hover-text (MXE_BAGI → primary-contrast), yoksa --mxe-on (MXE eşlemeli her temada
+     primary-contrast); eşlemesiz sitede eski --colorhover--. Zemin: --mxe-menu-hover-bg, yoksa eski --mxe-228b22. */
+  .modulex-menu-list ul a:hover,
+  .modulex-menu-list ul a:focus-visible {
+    background-color: var(--mxe-menu-hover-bg, var(--mxe-228b22, #228b22));
+    color: var(--mxe-menu-hover-text, var(--mxe-on, --colorhover--)) !important;
     cursor: pointer;
   }
 
   .modulex-menu-list-active {
-    background-color: var(--mxe-228b22, #228b22);
-    color: --colorhover-- !important;
+    background-color: var(--mxe-menu-hover-bg, var(--mxe-228b22, #228b22));
+    color: var(--mxe-menu-hover-text, var(--mxe-on, --colorhover--)) !important;
     cursor: pointer;
   }
 
