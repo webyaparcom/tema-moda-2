@@ -36,7 +36,8 @@
           "tr": "Üye Girişi",
           "en": "Login",
           "ar": "تسجيل الدخول"
-        }
+        },
+        "hataBildir": "https://webyapar.com/api/portal/tema-hata.js"
       },
       "version": "1.0.0",
       "icon": "info",
@@ -51,11 +52,11 @@
       "desing": {
         "logo": "logo.png",
         "color": "var(--mx-site-text, #1b1b1b)",
-        "colorhover": "var(--mx-site-primary, #2563eb)",
+        "colorhover": "var(--mx-site-primary-contrast, #ffffff)",
         "height": "78px",
         "urlsepet": "sepetim",
         "bgcolor": "var(--mx-site-bg, #ffffff)",
-        "bgcolorhover": "var(--mx-site-surface-2, #f1f1ee)",
+        "bgcolorhover": "var(--mx-site-primary, #1b1b1b)",
         "searchPlaceholder": {
           "tr": "Aradığınız ürün, kategori veya markalar burada...",
           "en": "Search products, categories or brands...",
@@ -98,7 +99,7 @@
           "en": "Items in cart",
           "ar": "عدد المنتجات في السلة"
         },
-        "uyelik": false,
+        "uyelik": true,
         "supportPhone": "+90 342 000 00 00",
         "menuText": {
           "tr": "Menü",
@@ -1878,16 +1879,19 @@
           "en": "Signed in, redirecting…"
         },
         "yokBaslik": {
-          "tr": "Üyelik şu an kullanılamıyor",
-          "en": "Membership is not available"
+          "tr": "Demo sitede üye girişi kapalı",
+          "en": "Member login is off on this demo",
+          "ar": "تسجيل دخول الأعضاء معطّل في هذا الموقع التجريبي"
         },
         "yokMetin": {
-          "tr": "Bu sitede üyelik hizmeti etkin değil. Üye olmadan alışverişe devam edebilirsiniz.",
-          "en": "Membership is not enabled on this site. You can keep shopping as a guest."
+          "tr": "Bu bir tema demosudur; üyelik, sipariş takibi ve adres defteri gerçek kurulumda etkinleşir. Üye olmadan alışverişe devam edebilirsiniz.",
+          "en": "This is a theme demo; membership, order tracking and the address book are enabled on a real installation. You can keep shopping as a guest.",
+          "ar": "هذا عرض تجريبي للقالب؛ تُفعَّل العضوية وتتبع الطلبات ودفتر العناوين في التثبيت الفعلي. يمكنك متابعة التسوق كزائر."
         },
         "alisveriseDevam": {
-          "tr": "Alışverişe Devam Et",
-          "en": "Continue Shopping"
+          "tr": "Alışverişe devam et",
+          "en": "Continue shopping",
+          "ar": "متابعة التسوق"
         },
         "zorunluMesaj": {
           "tr": "Bu alan zorunludur",

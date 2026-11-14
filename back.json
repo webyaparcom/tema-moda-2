@@ -20,14 +20,14 @@
         "ar": "تسجيل الدخول"
       },
       "description": {
-        "tr": "",
-        "en": "",
-        "ar": ""
+        "tr": "Üye girişi (demo).",
+        "en": "Member login (demo).",
+        "ar": "تسجيل دخول الأعضاء (تجريبي)."
       },
       "path": "login",
       "icon": "login",
       "category": "",
-      "status": "pause",
+      "status": "play",
       "desing": {
         "header": [],
         "body": [
