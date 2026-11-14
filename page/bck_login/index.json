@@ -6,9 +6,9 @@
     "ar": "تسجيل الدخول"
   },
   "description": {
-    "tr": "",
-    "en": "",
-    "ar": ""
+    "tr": "Üye girişi (demo).",
+    "en": "Member login (demo).",
+    "ar": "تسجيل دخول الأعضاء (تجريبي)."
   },
   "keyword": {
     "tr": "",
@@ -18,7 +18,7 @@
   "path": "login",
   "icon": "login",
   "category": "",
-  "status": "pause",
+  "status": "play",
   "desing": {
     "header": [],
     "body": [
@@ -34,5 +34,6 @@
     "ar": "تسجيل الدخول"
   },
   "date": "2026-10-31T16:52:29.044Z",
-  "update": "2026-11-12T07:36:33.637Z"
+  "update": "2026-11-14T13:16:13.068Z",
+  "noindex": true
 }

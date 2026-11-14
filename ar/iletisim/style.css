@@ -230,11 +230,11 @@
   }
 
   .h0001-login:hover {
-    background-color: var(--mx-site-surface-2, #f1f1ee);
+    background-color: var(--mx-site-primary, #1b1b1b);
   }
 
   .h0001-login:hover > * {
-    color: var(--mx-site-primary, #2563eb) !important;
+    color: var(--mx-site-primary-contrast, #ffffff) !important;
   }
 
   .h0001-login > * {
@@ -344,13 +344,13 @@
 
   .h0001-menu-list ul a:hover {
     background-color: var(--mxe-228b22, #228b22);
-    color: var(--mx-site-primary, #2563eb) !important;
+    color: var(--mx-site-primary-contrast, #ffffff) !important;
     cursor: pointer;
   }
 
   .h0001-menu-list-active {
     background-color: var(--mxe-228b22, #228b22);
-    color: var(--mx-site-primary, #2563eb) !important;
+    color: var(--mx-site-primary-contrast, #ffffff) !important;
     cursor: pointer;
   }
 
@@ -976,7 +976,7 @@
     justify-content: center;
     overflow: hidden;
     cursor: pointer;
-    background-image: url("/img/e2mp01/map.png?v=g81xn") !important;
+    background-image: url("/img/e2mp01/map.png?v=jihcb") !important;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -2173,3 +2173,4 @@
   @media (prefers-reduced-motion: reduce) { .f0003-dk-cta { transition: none; } .f0003-dk-cta:hover { gap: 4px; } }
 
 :root{--mxe-cd9624:var(--mx-site-primary);--mxe-238b23:var(--mx-site-primary);--mxe-228b22:var(--mx-site-primary);--mxe-fef7e7:var(--mx-site-surface-2);--mxe-e0dccb:color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);--mxe-eee:var(--mx-site-surface-2);--mxe-f7f7f7:var(--mx-site-surface);--mxe-ccc:color-mix(in srgb, var(--mx-site-text, #1b1b1b) 18%, transparent);--mxe-333:var(--mx-site-text);--mxe-on:var(--mx-site-primary-contrast)}
+#header [class$="-body-search"]{background-color:var(--mx-site-surface,#fff);border:1px solid color-mix(in srgb,var(--mx-site-text,#1b1b1b) 55%,var(--mx-site-bg,#fff));box-sizing:border-box}#header [class$="-body-search"]:focus-within{border-color:var(--mx-site-primary,#1b1b1b);box-shadow:0 0 0 2px color-mix(in srgb,var(--mx-site-primary,#1b1b1b) 35%,transparent)}#header a[class$="-login"]:hover,#header a[class$="-login"]:focus-visible{color:var(--mx-site-primary-contrast,#fff)}
